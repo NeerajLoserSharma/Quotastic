@@ -1,0 +1,214 @@
+/* || CSS Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+/* || VARIABLES */
+
+:root {
+    /* || FONT VARIABLES */
+
+    --FONT-FAMILY-BODY: 'Roboto', sans-serif;
+    --FONT-SIZE-BODY: clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);
+    --FONT-FAMILY-HEADING: 'Pacifico', cursive;
+    --FONT-SIZE-HEADING: 1.5rem;
+    --FONT-FAMILY-TAGLINE: 'Diphylleia', serif;
+    --FONT-SIZE-TAGLINE: 0.8rem;
+    --FONT-SIZE-QUOTE: 1.75rem;
+    --FONT-FAMILY-QUOTATION-MARKS: Georgia, serif;
+    --FONT-SIZE-QUOTATION-MARKS: 2rem;
+    --FONT-FAMILY-AUTHOR: 'Dancing Script', cursive;
+    --FONT-SIZE-ERROR-MESSAGE: 1.5rem;
+
+    /* || COLOR VARIABLES */
+
+    --AUTHOR-COLOR: hsl(306, 90%, 25%);
+    --AUTHOR-PRIMARY-TEXT-SHADOW-COLOR: var(--AUTHOR-COLOR);
+    --AUTHOR-SECONDARY-TEXT-SHADOW-COLOR: hsla(39, 65%, 50%, 0.8);
+    --BODY-BG-FALLBACK-COLOR: hsl(0, 0%, 75%);
+    --BUTTON-BORDER-COLOR: hsl(338, 46%, 49%);
+    --BUTTON-BOX-SHADOW-BOTTOM-RIGHT-COLOR: hsl(0, 0%, 35%);
+    --BUTTON-BOX-SHADOW-TOP-LEFT-COLOR: hsla(0, 0%, 100%, 0.5);
+    --BUTTON-LG-DEEPPINK: hsl(341, 80%, 61%);
+    --BUTTON-LG-ORANGE-LIGHT: hsl(21, 97%, 65%);
+    --BUTTON-LINEAR-GRADIENT: linear-gradient(135deg, var(--BUTTON-LG-DEEPPINK) 40%, var(--BUTTON-LG-ORANGE-LIGHT));
+    --BUTTON-TEXT-COLOR: hsl(0, 22%, 90%);
+    --ERROR-MESSAGE-COLOR: hsl(5, 90%, 55%);
+    --GLASS-BGCOLOR: hsla(0, 0%, 100%, 0.3);
+    --HEADER-BGCOLOR: hsla(0, 0%, 5%, 0.8);
+    --HEADER-BOX-SHADOW-DARK-COLOR: hsla(0, 0%, 0%, 0.3);
+    --HEADER-BOX-SHADOW-INDIGO-COLOR: hsla(240, 30%, 28%, 0.25);
+    --HEADING-TAGLINE-COLOR: whitesmoke;
+    --QUOTATION-MARKS-COLOR: hsl(0, 5%, 30%);
+    --QUOTE-PRIMARY-TEXT-SHADOW-COLOR: hsla(64, 77%, 38%, 0.6);
+    --QUOTE-SECONDARY-TEXT-SHADOW-COLOR: hsl(352, 40%, 41%);
+}
+
+/* || Utility classes */
+
+.text-center {
+    text-align: center;
+}
+
+.leading-one-and-half {
+    line-height: 1.5;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-crimson {
+    color: var(--ERROR-MESSAGE-COLOR);
+}
+
+.text-2xl {
+    font-size: var(--FONT-SIZE-ERROR-MESSAGE);
+}
+
+/* || General styles */
+
+html {
+    font-family: var(--FONT-FAMILY-BODY);
+    font-size: var(--FONT-SIZE-BODY);
+}
+
+body,
+figure,
+blockquote {
+    margin: 0;
+}
+
+body {
+    padding-bottom: 0.75em;
+    min-height: 100dvh;
+
+    background-color: var(--BODY-BG-FALLBACK-COLOR);
+    background-image: url("../images/tree_growing_from_book.jpg");
+    background-position: center;
+    background-size: cover;
+
+    background-blend-mode: multiply;
+}
+
+.main {
+    padding: 0.75em;
+
+    min-height: 82vh;
+    width: 85%;
+    max-width: 850px;
+    margin-inline: auto;
+
+    /* box-shadow: 0px 25px 20px -20px hsla(0, 0%, 0%, 0.45), 25px 0 20px -20px hsla(0, 0%, 0%, 0.45); */
+}
+
+/* || Specific styles */
+
+.header {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADING-TAGLINE-COLOR);
+
+    box-shadow: var(--HEADER-BOX-SHADOW-INDIGO-COLOR) 0px 30px 60px -12px,
+        var(--HEADER-BOX-SHADOW-DARK-COLOR) 0px 18px 36px -18px;
+}
+
+.title {
+    margin-block: 0;
+
+    font-family: var(--FONT-FAMILY-HEADING);
+    font-size: var(--FONT-SIZE-HEADING);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.tagline {
+    margin-top: 0;
+
+    font-family: var(--FONT-FAMILY-TAGLINE);
+    font-size: var(--FONT-SIZE-TAGLINE);
+    letter-spacing: 0.05em;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glassmorphism {
+    background-color: var(--GLASS-BGCOLOR);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 0.75em;
+    border: 2px solid var(--GLASS-BGCOLOR);
+}
+
+.quote-text {
+    margin-bottom: 0.5em;
+
+    font-size: var(--FONT-SIZE-QUOTE);
+
+    text-shadow: 2px 2px var(--QUOTE-PRIMARY-TEXT-SHADOW-COLOR),
+        3px 5px 4px var(--QUOTE-SECONDARY-TEXT-SHADOW-COLOR);
+}
+
+.quote-text::before,
+.quote-text::after {
+    font-family: var(--FONT-FAMILY-QUOTATION-MARKS);
+    font-size: var(--FONT-SIZE-QUOTATION-MARKS);
+    color: var(--QUOTATION-MARKS-COLOR);
+}
+
+.quote-text::before {
+    content: open-quote;
+}
+
+.quote-text::after {
+    content: close-quote;
+}
+
+.author {
+    font-family: var(--FONT-FAMILY-AUTHOR);
+    font-weight: 500;
+
+    color: var(--AUTHOR-COLOR);
+    text-shadow: 8px 6px 5px var(--AUTHOR-PRIMARY-TEXT-SHADOW-COLOR),
+        2px 1px var(--AUTHOR-SECONDARY-TEXT-SHADOW-COLOR);
+}
+
+/* || Button styles */
+
+.next-quote-btn {
+    margin-top: 2.5em;
+    padding: 0.5em 1.5em;
+
+    cursor: pointer;
+    border: 2px solid var(--BUTTON-BORDER-COLOR);
+    border-radius: 0.5em;
+    outline-color: var(--BUTTON-LG-DEEPPINK);
+    outline-offset: 5px;
+
+    background-image: var(--BUTTON-LINEAR-GRADIENT);
+    color: var(--BUTTON-TEXT-COLOR);
+
+    transition: translate 675ms;
+}
+
+.next-quote-btn:is(:hover, :focus-visible) {
+    translate: 0 -1rem;
+    transition: translate 160ms ease-in-out;
+}
+
+.next-quote-btn:active {
+    opacity: 0.9;
+    box-shadow: inset -1px -1px 3px var(--BUTTON-BOX-SHADOW-BOTTOM-RIGHT-COLOR),
+        inset 2px 3.5px 3px var(--BUTTON-BOX-SHADOW-TOP-LEFT-COLOR);
+}
