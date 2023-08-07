@@ -22,12 +22,22 @@ function invokeFetchData ()
     async function fetchData ( url, maxRetries = 3 )
     {
         let retryCtr = 0;
+        let statusCode = null;
 
         while ( retryCtr < maxRetries )
         {
             try
             {
                 const response = await fetch( url );
+                statusCode = response.status;
+
+                // Status code 400 - 499 represents client error response and 500 - 599 represents server error resoponse.
+                if ( 400 <= statusCode && statusCode <= 599 )
+                {
+                    displayError( statusCode );
+                    break;
+                }
+
                 const jsonData = await response.json();
                 displayQuote( jsonData );
                 break;
@@ -39,7 +49,7 @@ function invokeFetchData ()
         }
 
         if ( retryCtr === maxRetries )
-            displayError();
+            displayError( statusCode );
     }
 
 
@@ -58,20 +68,27 @@ function displayQuote ( jsonData )
 
 const main = document.querySelector( "main" );
 
-function displayError ()
+function displayError ( statusCode )
 {
     removeElements();
-    const warningPara = createWarningPara();
+    const warningPara = createWarningPara( statusCode );
 
     main.appendChild( warningPara );
 }
 
-function createWarningPara ()
+function createWarningPara ( statusCode )
 {
     const warningPara = document.createElement( "p" );
-    warningPara.innerHTML = `Oops!! Something went wrong ☹️☹️🥲.
-    <br>
-    Please try to refresh the page.`;
+    let warningMsg;
+
+    warningMsg = statusCode === 429 ? `Too many requests ☹️☹️!
+                <br>
+                Please try again sometime later.` :
+                `Oops!! Something went wrong ☹️☹️🥲.
+                <br>
+                Please try to refresh the page.`;
+
+    warningPara.innerHTML = warningMsg;
     warningPara.classList.add( "leading-one-and-half", "font-bold", "text-crimson", "text-2xl" );
 
     return warningPara;
