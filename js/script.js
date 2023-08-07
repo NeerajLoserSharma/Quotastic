@@ -79,14 +79,12 @@ function displayError ( statusCode )
 function createWarningPara ( statusCode )
 {
     const warningPara = document.createElement( "p" );
-    let warningMsg;
-
-    warningMsg = statusCode === 429 ? `Too many requests ☹️☹️!
-                <br>
-                Please try again sometime later.` :
-                `Oops!! Something went wrong ☹️☹️🥲.
-                <br>
-                Please try to refresh the page.`;
+    const warningMsg = statusCode === 429 ? `Too many requests ☹️☹️!
+                       <br>
+                       Please try again sometime later.` :
+                       `Oops!! Something went wrong ☹️☹️🥲.
+                       <br>
+                       Please try to refresh the page.`;
 
     warningPara.innerHTML = warningMsg;
     warningPara.classList.add( "leading-one-and-half", "font-bold", "text-crimson", "text-2xl" );
