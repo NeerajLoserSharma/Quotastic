@@ -21,8 +21,7 @@ function invokeFetchData ()
 {
     async function fetchData ( url, maxRetries = 3 )
     {
-        let retryCtr = 0;
-        let statusCode = null;
+        let retryCtr = 0, statusCode = null;
 
         while ( retryCtr < maxRetries )
         {
