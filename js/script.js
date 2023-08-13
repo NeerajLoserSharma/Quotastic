@@ -34,12 +34,12 @@ function invokeFetchData ()
                 if ( 400 <= statusCode && statusCode <= 599 )
                 {
                     displayError( statusCode );
-                    break;
+                    return;
                 }
 
                 const jsonData = await response.json();
                 displayQuote( jsonData );
-                break;
+                return;
             } catch ( error )
             {
                 console.log( error );
@@ -81,7 +81,7 @@ function createWarningPara ( statusCode )
     const warningMsg = statusCode === 429 ? `Too many requests ☹️☹️!
                        <br>
                        Please try again sometime later.` :
-                       `Oops!! Something went wrong ☹️☹️🥲.
+        `Oops!! Something went wrong ☹️☹️🥲.
                        <br>
                        Please try to refresh the page.`;
 
