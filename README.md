@@ -46,7 +46,7 @@ This project uses the [Quotable](https://github.com/lukePeavey/quotable) API to 
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - Mobile-first workflow
 
-### What I learnd
+### What I learnt
 
 - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [`status`](https://developer.mozilla.org/en-US/docs/Web/API/Response/status) property of a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object returns the HTTP response status code
