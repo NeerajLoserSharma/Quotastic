@@ -101,7 +101,7 @@ body {
 .main {
     padding: 0.75em;
 
-    min-height: 90dvh;
+    min-height: 90vh;
     width: 85%;
     max-width: 850px;
     margin-inline: auto;
