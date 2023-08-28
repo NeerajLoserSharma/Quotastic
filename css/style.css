@@ -16,12 +16,12 @@ button {
     /* || FONT VARIABLES */
 
     --FONT-FAMILY-BODY: 'Roboto', sans-serif;
-    --FONT-SIZE-BODY: clamp(1.25rem, 1.5vw + 0.5rem, 1.5rem);
+    --FONT-SIZE-BODY: clamp(1.25rem, 2.25vh + 0.5rem, 2.5rem);
     --FONT-FAMILY-HEADING: 'Pacifico', cursive;
-    --FONT-SIZE-HEADING: 1.5rem;
+    --FONT-SIZE-HEADING: 1.4rem;
     --FONT-FAMILY-TAGLINE: 'Diphylleia', serif;
-    --FONT-SIZE-TAGLINE: 0.8rem;
-    --FONT-SIZE-QUOTE: 1.75rem;
+    --FONT-SIZE-TAGLINE: 0.75rem;
+    --FONT-SIZE-QUOTE: 1.7rem;
     --FONT-FAMILY-QUOTATION-MARKS: Georgia, serif;
     --FONT-SIZE-QUOTATION-MARKS: 2rem;
     --FONT-FAMILY-AUTHOR: 'Dancing Script', cursive;
@@ -101,7 +101,7 @@ body {
 .main {
     padding: 0.75em;
 
-    min-height: 90vh;
+    min-height: 83vh;
     width: 85%;
     max-width: 850px;
     margin-inline: auto;
