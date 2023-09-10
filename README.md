@@ -31,7 +31,7 @@ This project uses the [Quotable](https://github.com/lukePeavey/quotable) API to 
 
 <p align="center">Screenshot of the project</p>
 
-<img src="https://i.ibb.co/P6tHtGz/quotastic-project-screenshot.png" alt="Screenshot of the website" style="display: block; margin-inline: auto">
+<p align="center"><img src="https://i.ibb.co/P6tHtGz/quotastic-project-screenshot.png" alt="Screenshot of the website"></p>
 
 &nbsp;
 
