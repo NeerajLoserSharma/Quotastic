@@ -37,6 +37,7 @@ button {
     --BUTTON-BOX-SHADOW-BOTTOM-RIGHT-COLOR: hsl(0, 0%, 35%);
     --BUTTON-BOX-SHADOW-TOP-LEFT-COLOR: hsla(0, 0%, 100%, 0.5);
     --BUTTON-LG-DEEPPINK: hsl(341, 80%, 61%);
+    --BUTTON-LG-FALLBACK-COLOR: hsl(341, 80%, 41%);
     --BUTTON-LG-ORANGE-LIGHT: hsl(21, 97%, 65%);
     --BUTTON-LINEAR-GRADIENT: linear-gradient(135deg, var(--BUTTON-LG-DEEPPINK) 40%, var(--BUTTON-LG-ORANGE-LIGHT));
     --BUTTON-TEXT-COLOR: hsl(0, 22%, 90%);
@@ -196,6 +197,7 @@ body {
     outline-color: var(--BUTTON-LG-DEEPPINK);
     outline-offset: 5px;
 
+    background-color: var(--BUTTON-LG-FALLBACK-COLOR);
     background-image: var(--BUTTON-LINEAR-GRADIENT);
     color: var(--BUTTON-TEXT-COLOR);
 
